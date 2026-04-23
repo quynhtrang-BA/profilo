@@ -448,6 +448,171 @@ footer {
 footer strong { color: var(--accent); text-shadow: 0 0 8px rgba(124,58,237,.4); }
 .footer-sub { font-size: .8rem; margin-top: .3rem; opacity: .6; }
 
+/* ==================== GIFT BOX ==================== */
+#gift-section { background: rgba(14,10,36,0.82); text-align: center; }
+.gift-intro {
+  color: var(--text-muted); font-size: 1.05rem;
+  max-width: 500px; margin: 0 auto 3rem;
+}
+.gift-scene {
+  position: relative; display: flex; align-items: center;
+  justify-content: center; min-height: 340px;
+}
+#confetti-canvas {
+  position: absolute; inset: -60px; pointer-events: none; z-index: 10;
+  width: calc(100% + 120px); height: calc(100% + 120px);
+}
+
+/* ── Gift Box ── */
+.gift-box {
+  position: relative; cursor: pointer; user-select: none;
+  display: flex; flex-direction: column; align-items: center;
+  animation: giftBounce 2s ease-in-out infinite;
+  transition: transform .2s;
+  z-index: 5;
+}
+.gift-box:hover { transform: scale(1.06); }
+.gift-box.opened { animation: none; }
+
+@keyframes giftBounce {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  20%     { transform: translateY(-8px) rotate(-3deg); }
+  40%     { transform: translateY(0) rotate(3deg); }
+  60%     { transform: translateY(-5px) rotate(-1deg); }
+  80%     { transform: translateY(0) rotate(0deg); }
+}
+
+/* Nắp hộp */
+.gift-lid {
+  position: relative;
+  width: 170px; height: 50px;
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  border-radius: 12px 12px 2px 2px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.4);
+  transform-origin: center bottom;
+  transition: transform .7s cubic-bezier(.17, .67, .83, .67), opacity .5s;
+  z-index: 4;
+}
+.gift-box.opened .gift-lid {
+  transform: translateY(-120px) translateX(40px) rotate(35deg) scale(0.7);
+  opacity: 0;
+}
+.lid-ribbon-h {
+  position: absolute; top: 50%; left: 0; right: 0; height: 16px;
+  background: linear-gradient(90deg, #fcd34d, #f5c518, #fcd34d);
+  transform: translateY(-50%);
+  box-shadow: 0 0 15px rgba(245,197,24,.4);
+}
+.lid-ribbon-v {
+  position: absolute; top: 0; bottom: 0; left: 50%; width: 16px;
+  background: linear-gradient(180deg, #fcd34d, #f5c518, #fcd34d);
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(245,197,24,.4);
+}
+/* Nơ tinh xảo hơn */
+.lid-bow {
+  position: absolute; top: -35px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; justify-content: center;
+}
+.bow-left, .bow-right {
+  width: 45px; height: 35px;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  border-radius: 50% 50% 10% 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2), 0 0 20px rgba(245,197,24,0.3);
+  position: relative;
+}
+.bow-right {
+  border-radius: 50% 50% 50% 10%;
+}
+.bow-center {
+  width: 22px; height: 22px;
+  background: radial-gradient(circle at 30% 30%, #fcd34d, #d97706);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 15px rgba(245,197,24,0.5);
+  z-index: 5;
+  position: absolute;
+}
+
+/* Thân hộp */
+.gift-body {
+  position: relative;
+  width: 160px; height: 140px;
+  background: linear-gradient(160deg, #b91c1c, #ef4444, #991b1b);
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 -4px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+  border: 1px solid rgba(239,68,68,0.3);
+}
+.body-ribbon-h {
+  position: absolute; top: 40%; left: 0; right: 0; height: 18px;
+  background: linear-gradient(90deg, #fcd34d, #f5c518, #fcd34d);
+  transform: translateY(-50%);
+  box-shadow: 0 0 12px rgba(245,197,24,.3);
+}
+.body-ribbon-v {
+  position: absolute; top: 0; bottom: 0; left: 50%; width: 18px;
+  background: linear-gradient(180deg, #fcd34d, #f5c518, #fcd34d);
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(245,197,24,.3);
+}
+
+/* Hint text */
+.gift-hint {
+  margin-top: 16px;
+  color: var(--text-muted); font-size: .85rem;
+  animation: hintPulse 1.5s ease-in-out infinite;
+}
+@keyframes hintPulse {
+  0%,100% { opacity: .5; transform: translateY(0); }
+  50%     { opacity: 1;  transform: translateY(-3px); }
+}
+.gift-box.opened .gift-hint { display: none; }
+
+/* ── Wish Card ── */
+.wish-card {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0; pointer-events: none;
+  transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease;
+  z-index: 20; width: 320px; max-width: 90vw;
+}
+.wish-card.visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1; pointer-events: auto;
+}
+.wish-card-inner {
+  background: rgba(14,10,36,.95);
+  border: 1px solid rgba(124,58,237,.4);
+  border-radius: 20px; padding: 2.5rem 2rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 40px rgba(124,58,237,.25);
+  text-align: center;
+}
+.wish-emoji { font-size: 3rem; margin-bottom: 1rem; animation: emojiSpin .6s ease; }
+@keyframes emojiSpin {
+  from { transform: rotate(-20deg) scale(0.5); }
+  to   { transform: rotate(0deg) scale(1); }
+}
+.wish-text {
+  font-size: 1.05rem; line-height: 1.75;
+  color: var(--text); margin-bottom: 1.2rem;
+  font-style: italic;
+}
+.wish-from {
+  font-size: .9rem; color: var(--accent); font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px rgba(124,58,237,.4);
+}
+.wish-again-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff; border: none; cursor: pointer;
+  padding: .6rem 1.5rem; border-radius: 99px;
+  font-family: inherit; font-size: .9rem; font-weight: 600;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 16px rgba(124,58,237,.4);
+}
+.wish-again-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,.5); }
+
 /* ==================== ANIMATIONS ==================== */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-20px); }

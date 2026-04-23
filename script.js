@@ -331,3 +331,128 @@ const statObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 statNums.forEach(n => statObserver.observe(n));
+// ── Gift Box Logic ──────────────────────────────────
+const wishes = [
+  { text: "Chúc bạn một ngày tràn đầy năng lượng và niềm vui!", emoji: "🌟" },
+  { text: "Hy vọng mọi dự định của bạn đều thành công rực rỡ!", emoji: "🚀" },
+  { text: "Chúc bạn luôn giữ được niềm đam mê và sự sáng tạo!", emoji: "💡" },
+  { text: "Mong rằng bạn sẽ tìm thấy những insight giá trị trong mọi dữ liệu!", emoji: "📊" },
+  { text: "Chúc bạn luôn hạnh phúc và mỉm cười thật nhiều mỗi ngày!", emoji: "😊" },
+  { text: "Cảm ơn bạn đã ghé thăm trang cá nhân của tôi!", emoji: "❤️" },
+  { text: "Chúc bạn gặt hái được nhiều thành công trên con đường đã chọn!", emoji: "🎯" }
+];
+
+function openGift() {
+  const box = document.getElementById('gift-box');
+  if (box.classList.contains('opened')) return;
+
+  const wish = wishes[Math.floor(Math.random() * wishes.length)];
+  document.getElementById('wish-text').textContent = wish.text;
+  document.getElementById('wish-emoji').textContent = wish.emoji;
+
+  box.classList.add('opened');
+
+  setTimeout(() => {
+    document.getElementById('wish-card').classList.add('visible');
+    startConfetti();
+  }, 600);
+}
+
+function resetGift() {
+  document.getElementById('gift-box').classList.remove('opened');
+  document.getElementById('wish-card').classList.remove('visible');
+  stopConfetti();
+}
+
+// Auto open when navigating from menu
+document.querySelector('a[href="#gift-section"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  const target = document.getElementById('gift-section');
+  window.scrollTo({
+    top: target.offsetTop - 80,
+    behavior: 'smooth'
+  });
+  
+  // Wait for scroll to finish then open
+  setTimeout(() => {
+    openGift();
+  }, 800);
+});
+
+// ── Confetti Effect ──────────────────────────────────
+const cCanvas = document.getElementById('confetti-canvas');
+const cCtx = cCanvas.getContext('2d');
+let confettiParticles = [];
+let confettiActive = false;
+
+function resizeConfetti() {
+  const rect = document.getElementById('gift-scene').getBoundingClientRect();
+  cCanvas.width = rect.width + 120;
+  cCanvas.height = rect.height + 120;
+}
+
+class Confetti {
+  constructor() {
+    this.x = cCanvas.width / 2;
+    this.y = cCanvas.height / 2 + 50;
+    this.size = Math.random() * 8 + 4;
+    const angle = Math.random() * Math.PI * 2;
+    const speed = Math.random() * 10 + 5;
+    this.vx = Math.cos(angle) * speed;
+    this.vy = Math.sin(angle) * speed - 8;
+    this.gravity = 0.2;
+    this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+    this.rotation = Math.random() * 360;
+    this.rSpeed = Math.random() * 10 - 5;
+    this.opacity = 1;
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.vy += this.gravity;
+    this.rotation += this.rSpeed;
+    this.opacity -= 0.01;
+  }
+  draw() {
+    cCtx.save();
+    cCtx.translate(this.x, this.y);
+    cCtx.rotate(this.rotation * Math.PI / 180);
+    cCtx.fillStyle = this.color;
+    cCtx.globalAlpha = this.opacity;
+    cCtx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+    cCtx.restore();
+  }
+}
+
+function startConfetti() {
+  resizeConfetti();
+  confettiActive = true;
+  confettiParticles = [];
+  for (let i = 0; i < 100; i++) {
+    setTimeout(() => {
+      if (confettiActive) confettiParticles.push(new Confetti());
+    }, i * 10);
+  }
+  animateConfetti();
+}
+
+function stopConfetti() {
+  confettiActive = false;
+  setTimeout(() => {
+    confettiParticles = [];
+    cCtx.clearRect(0, 0, cCanvas.width, cCanvas.height);
+  }, 1000);
+}
+
+function animateConfetti() {
+  if (!confettiActive && confettiParticles.length === 0) return;
+  cCtx.clearRect(0, 0, cCanvas.width, cCanvas.height);
+  confettiParticles.forEach((p, i) => {
+    p.update();
+    p.draw();
+    if (p.opacity <= 0) confettiParticles.splice(i, 1);
+  });
+  if (confettiActive || confettiParticles.length > 0) {
+    requestAnimationFrame(animateConfetti);
+  }
+}

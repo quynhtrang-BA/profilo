@@ -32,6 +32,7 @@
         <li><a href="#about"><i class="fa-solid fa-user"></i> Về tôi</a></li>
         <li><a href="#skills"><i class="fa-solid fa-code"></i> Kỹ năng</a></li>
         <li><a href="#projects"><i class="fa-solid fa-folder-open"></i> Dự án</a></li>
+        <li><a href="#gift-section"><i class="fa-solid fa-gift"></i> Nhận quà</a></li>
         <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Liên hệ</a></li>
       </ul>
       <a href="#contact" class="nav-cta"><i class="fa-solid fa-paper-plane"></i> Kết nối</a>
@@ -455,6 +456,48 @@
           <button type="submit" class="btn-primary" id="form-submit">Gửi ngay 🚀</button>
           <p id="form-success" class="form-success hidden">✅ Tin nhắn đã được gửi! Tôi sẽ phản hồi sớm nhất.</p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GIFT BOX ===== -->
+  <section id="gift-section">
+    <div class="section-inner">
+      <div class="section-tag">Dành cho bạn 🎁</div>
+      <h2 class="section-title">Mở quà từ tôi!</h2>
+      <p class="gift-intro">Tôi có một món quà nhỏ dành riêng cho bạn. Hãy chạm vào hộp quà để khám phá nhé! 🌟</p>
+
+      <div class="gift-scene" id="gift-scene">
+        <!-- Confetti canvas -->
+        <canvas id="confetti-canvas"></canvas>
+
+        <!-- Gift Box -->
+        <div class="gift-box" id="gift-box" onclick="openGift()">
+          <div class="gift-lid" id="gift-lid">
+            <div class="lid-ribbon-h"></div>
+            <div class="lid-ribbon-v"></div>
+            <div class="lid-bow">
+              <div class="bow-left"></div>
+              <div class="bow-right"></div>
+              <div class="bow-center"></div>
+            </div>
+          </div>
+          <div class="gift-body">
+            <div class="body-ribbon-h"></div>
+            <div class="body-ribbon-v"></div>
+          </div>
+          <div class="gift-hint">Chạm vào đây!</div>
+        </div>
+
+        <!-- Wish Card -->
+        <div class="wish-card" id="wish-card">
+          <div class="wish-card-inner">
+            <div class="wish-emoji" id="wish-emoji">🎉</div>
+            <p class="wish-text" id="wish-text"></p>
+            <div class="wish-from">— Quỳnh Trang 💜</div>
+            <button class="wish-again-btn" onclick="resetGift()">🎁 Mở lại</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
