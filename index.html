@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tô Lê Quỳnh Trang – Data Engineer</title>
+  <meta name="description"
+    content="Trang cá nhân của Tô Lê Quỳnh Trang – Data Engineer đam mê phân tích dữ liệu và xây dựng giải pháp thông minh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ===== CURSOR GLOW ===== -->
+  <div id="cursor-glow"></div>
+
+  <!-- ===== PARTICLES ===== -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">QuynhTrang</span>
+      <ul class="nav-links">
+        <li><a href="#about"><i class="fa-solid fa-user"></i> Về tôi</a></li>
+        <li><a href="#skills"><i class="fa-solid fa-code"></i> Kỹ năng</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-folder-open"></i> Dự án</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Liên hệ</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta"><i class="fa-solid fa-paper-plane"></i> Kết nối</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">👋 Xin chào, tôi là</div>
+      <h1 class="hero-name">Tô Lê<br /><span class="gradient-text">Quỳnh Trang</span></h1>
+      <p class="hero-role"><span class="typed-text" id="typed"></span><span class="cursor-blink">|</span></p>
+      <p class="hero-desc">Đam mê biến dữ liệu thành insight, xây dựng dashboard trực quan và tự động hóa quy trình phân
+        tích. Luôn học hỏi và phát triển trong lĩnh vực Data Engineering.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">Xem dự án</a>
+        <a href="#contact" class="btn-outline">Liên hệ tôi</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Dự án</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Năm học</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Công nghệ</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring">
+        <img src="avatar.jpg" alt="Quỳnh Trang avatar" class="avatar-img" />
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+      </div>
+      <div class="floating-card card-1">
+        <span class="card-icon">📊</span>
+        <span>Power BI</span>
+      </div>
+      <div class="floating-card card-2">
+        <span class="card-icon">🐍</span>
+        <span>Python</span>
+      </div>
+      <div class="floating-card card-3">
+        <span class="card-icon">🗄️</span>
+        <span>SQL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-tag">Về tôi</div>
+      <h2 class="section-title">Câu chuyện của tôi</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Tôi là sinh viên ngành <strong>Kinh tế phát triển</strong>, hiện đang thực tập tại <strong>SSI
+              Securities Corporation</strong>. Tôi đam mê xây dựng các pipeline dữ liệu, phân tích thị trường chứng
+            khoán và tạo ra các báo cáo trực quan giúp ra quyết định nhanh chóng.</p>
+          <p>Trong thời gian học và thực tập, tôi đã tích lũy kinh nghiệm thực tế với nhiều công cụ phân tích dữ liệu
+            hiện đại, từ Excel nâng cao đến Python và Power BI.</p>
+          <div class="about-info-grid">
+            <div class="info-item"><span class="info-label">📍 Địa điểm</span><span class="info-val">TP. Hồ Chí
+                Minh</span></div>
+            <div class="info-item"><span class="info-label">🎓 Trường</span><span class="info-val">UEB</span>
+            </div>
+            <div class="info-item"><span class="info-label">💼 Thực tập</span><span class="info-val">SSI
+              </span></div>
+            <div class="info-item"><span class="info-label">📧 Email</span><span
+                class="info-val">toquynhtrang13@gmail.com</span></div>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="value-card">
+            <div class="vc-icon">🎯</div>
+            <h4>Mục tiêu</h4>
+            <p>Trở thành Data Engineer chuyên nghiệp, xây dựng hệ thống dữ liệu quy mô lớn</p>
+          </div>
+          <div class="value-card">
+            <div class="vc-icon">💡</div>
+            <h4>Phong cách</h4>
+            <p>Tư duy phân tích, chú trọng chi tiết, học hỏi không ngừng</p>
+          </div>
+          <div class="value-card">
+            <div class="vc-icon">🚀</div>
+            <h4>Đang học</h4>
+            <p>HTML/CSS/Javascript, SQL, Power BI, Python</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-tag"> Kỹ năng</div>
+      <h2 class="section-title">Công nghệ & Công cụ</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><span>📊</span> Phân tích & Trực quan</h3>
+          <div class="skill-list">
+            <div class="skill-item" data-level="90">
+              <div class="skill-top"><span>Microsoft Excel</span><span class="skill-pct">90%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:90%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-level="80">
+              <div class="skill-top"><span>Power BI</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:80%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-level="70">
+              <div class="skill-top"><span>Tableau</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><span>💻</span> Lập trình</h3>
+          <div class="skill-list">
+            <div class="skill-item" data-level="75">
+              <div class="skill-top"><span>Python</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:75%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-level="80">
+              <div class="skill-top"><span>SQL</span><span class="skill-pct">60%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:60%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-level="60">
+              <div class="skill-top"><span>HTML / CSS</span><span class="skill-pct">50%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><span>🛠️</span> Công cụ & Nền tảng</h3>
+          <div class="skill-list">
+            <div class="skill-item" data-level="85">
+              <div class="skill-top"><span>Git / GitHub</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:85%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-level="65">
+              <div class="skill-top"><span>Pandas / NumPy</span><span class="skill-pct">65%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:65%"></div>
+              </div>
+            </div>
+            <div class="skill-item" data-level="55">
+              <div class="skill-top"><span>Google Colab</span><span class="skill-pct">55%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="--w:55%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title"><span>🤝</span> Kỹ năng mềm</h3>
+          <div class="soft-skills">
+            <span class="soft-tag">Phân tích vấn đề</span>
+            <span class="soft-tag">Làm việc nhóm</span>
+            <span class="soft-tag">Thuyết trình</span>
+            <span class="soft-tag">Quản lý thời gian</span>
+            <span class="soft-tag">Tư duy phản biện</span>
+            <span class="soft-tag">Giao tiếp</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-inner">
+      <div class="section-tag"> Dự án</div>
+      <h2 class="section-title">Những gì tôi đã xây dựng</h2>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="data">Data Analysis</button>
+        <button class="filter-btn" data-filter="viz">Visualization</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card" data-cat="data viz">
+          <div class="project-img" style="background: linear-gradient(135deg,#6366f1,#8b5cf6)">
+            <span class="proj-emoji">📈</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="ptag">Power BI</span><span class="ptag">SQL</span><span
+                class="ptag">Excel</span></div>
+            <h3>Dashboard Chứng khoán SSI</h3>
+            <p>Dashboard phân tích thị trường chứng khoán real-time, theo dõi danh mục đầu tư, P&L theo ngày/tuần/tháng.
+              Tích hợp dữ liệu từ nhiều nguồn khác nhau.</p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="#" class="proj-link">🔗 Demo</a>
+                <a href="#" class="proj-link">⭐ GitHub</a>
+              </div>
+              <span class="project-status status-done">Hoàn thành</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="data">
+          <div class="project-img" style="background: linear-gradient(135deg,#0ea5e9,#06b6d4)">
+            <span class="proj-emoji">🔍</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span
+                class="ptag">Matplotlib</span></div>
+            <h3>Phân tích xu hướng thị trường</h3>
+            <p>Sử dụng Python để thu thập, làm sạch và phân tích dữ liệu giá cổ phiếu lịch sử. Áp dụng các chỉ báo kỹ
+              thuật MA, RSI, MACD để dự báo xu hướng.</p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="#" class="proj-link">🔗 Demo</a>
+                <a href="#" class="proj-link">⭐ GitHub</a>
+              </div>
+              <span class="project-status status-done">Hoàn thành</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="data viz">
+          <div class="project-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">
+            <span class="proj-emoji">🛒</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="ptag">Excel</span><span class="ptag">Power Query</span><span
+                class="ptag">VBA</span></div>
+            <h3>Báo cáo Doanh thu Bán lẻ</h3>
+            <p>Tự động hóa quy trình tổng hợp báo cáo doanh thu từ nhiều chi nhánh. Sử dụng Power Query kết nối dữ liệu
+              và VBA để tạo report tự động hàng tháng.</p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="#" class="proj-link">🔗 Demo</a>
+                <a href="https://github.com/quynhtrang-BA/Data-Analytics-Project" target="_blank" class="proj-link">⭐
+                  GitHub</a>
+              </div>
+              <span class="project-status status-done">Hoàn thành</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="data">
+          <div class="project-img" style="background: linear-gradient(135deg,#10b981,#059669)">
+            <span class="proj-emoji">🏦</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="ptag">SQL</span><span class="ptag">Python</span><span
+                class="ptag">Jupyter</span></div>
+            <h3>Phân tích khách hàng ngân hàng</h3>
+            <p>Phân tích hành vi khách hàng, phân khúc theo RFM, dự báo churn rate. Xây dựng báo cáo tổng hợp giúp nhóm
+              kinh doanh đưa ra chiến lược phù hợp.</p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="#" class="proj-link">🔗 Demo</a>
+                <a href="#" class="proj-link">⭐ GitHub</a>
+              </div>
+              <span class="project-status status-progress">Đang làm</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-img" style="background: linear-gradient(135deg,#ec4899,#8b5cf6)">
+            <span class="proj-emoji">🎆</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span
+                class="ptag">JavaScript</span></div>
+            <h3>Trang Pháo hoa 30/4</h3>
+            <p>Trang web kỷ niệm ngày 30/4 với hiệu ứng pháo hoa tương tác sử dụng HTML5 Canvas. Người dùng có thể click
+              để tạo pháo hoa ở bất kỳ vị trí nào.</p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="#" class="proj-link">🔗 Demo</a>
+                <a href="#" class="proj-link">⭐ GitHub</a>
+              </div>
+              <span class="project-status status-done">Hoàn thành</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="data viz">
+          <div class="project-img" style="background: linear-gradient(135deg,#64748b,#334155)">
+            <span class="proj-emoji">📉</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="ptag">Python</span><span class="ptag">Seaborn</span><span
+                class="ptag">Plotly</span></div>
+            <h3>EDA Tập dữ liệu Tài chính</h3>
+            <p>Phân tích khám phá dữ liệu (EDA) trên tập dữ liệu tài chính lớn, phát hiện outlier, phân tích tương quan
+              và trực quan hóa bằng Plotly interactive charts.</p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="#" class="proj-link">🔗 Demo</a>
+                <a href="#" class="proj-link">⭐ GitHub</a>
+              </div>
+              <span class="project-status status-done">Hoàn thành</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section id="timeline">
+    <div class="section-inner">
+      <div class="section-tag"> Hành trình</div>
+      <h2 class="section-title">Kinh nghiệm & Học vấn</h2>
+      <div class="timeline">
+
+        <div class="tl-item tl-right">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2025 – Hiện tại</span>
+            <h4>Thực tập sinh Data</h4>
+            <p class="tl-org">SSI Securities Corporation</p>
+            <p>Xây dựng dashboard phân tích, hỗ trợ team phân tích dữ liệu giao dịch, tự động hóa báo cáo.</p>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2022 – 2026</span>
+            <h4>Cử nhân Hệ thống thông tin quản lý</h4>
+            <p class="tl-org">Trường Đại học Kinh tế</p>
+            <p>Chuyên ngành về quản trị dữ liệu, hệ thống thông tin doanh nghiệp và phân tích kinh doanh.</p>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2024</span>
+            <h4>Chứng chỉ Power BI</h4>
+            <p class="tl-org">Microsoft / Coursera</p>
+            <p>Hoàn thành khóa học Microsoft Power BI Data Analyst, thành thạo DAX, Power Query, thiết kế báo cáo.</p>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date">2023</span>
+            <h4>Python for Data Science</h4>
+            <p class="tl-org">DataCamp / Kaggle</p>
+            <p>Hoàn thành track Data Analyst với Python, thực hành trên các dataset thực tế từ Kaggle competitions.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-tag"> Liên hệ</div>
+      <h2 class="section-title">Hãy kết nối với tôi</h2>
+      <p class="contact-sub">Tôi luôn sẵn sàng tiếp nhận cơ hội mới, hợp tác dự án hoặc đơn giản là cùng nhau trao đổi
+        về data!</p>
+      <div class="contact-grid">
+        <div class="contact-links">
+          <a href="mailto:toquynhtrang13@gmail.com" class="contact-card" id="contact-email">
+            <div class="cc-icon">📧</div>
+            <div class="cc-info"><span class="cc-label">Email</span><span class="cc-val">toquynhtrang13@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://github.com/quynhtrang-BA" target="_blank" class="contact-card" id="contact-github">
+            <div class="cc-icon">🐙</div>
+            <div class="cc-info"><span class="cc-label">GitHub</span><span class="cc-val">github.com/quynh-trang</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" class="contact-card" id="contact-linkedin">
+            <div class="cc-icon">💼</div>
+            <div class="cc-info"><span class="cc-label">LinkedIn</span><span
+                class="cc-val">linkedin.com/in/quynh-trang</span></div>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" class="contact-card" id="contact-fb">
+            <div class="cc-icon">📱</div>
+            <div class="cc-info"><span class="cc-label">Facebook</span><span class="cc-val">fb.com/quynh.trang</span>
+            </div>
+          </a>
+        </div>
+        <form class="contact-form" id="contact-form" onsubmit="handleForm(event)">
+          <h3>Gửi tin nhắn</h3>
+          <div class="form-group">
+            <input type="text" id="form-name" placeholder="Tên của bạn" required />
+            <label for="form-name">Tên của bạn</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="form-email" placeholder="Email của bạn" required />
+            <label for="form-email">Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="form-msg" rows="4" placeholder="Nội dung tin nhắn..." required></textarea>
+            <label for="form-msg">Tin nhắn</label>
+          </div>
+          <button type="submit" class="btn-primary" id="form-submit">Gửi ngay 🚀</button>
+          <p id="form-success" class="form-success hidden">✅ Tin nhắn đã được gửi! Tôi sẽ phản hồi sớm nhất.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Được xây dựng bằng ❤️ bởi <strong>Tô Lê Quỳnh Trang</strong> · 2025</p>
+    <p class="footer-sub">Data Engineer · Hà Nội, Việt Nam</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
