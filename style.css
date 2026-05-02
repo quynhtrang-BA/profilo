@@ -439,6 +439,35 @@ section { position: relative; z-index: 1; padding: 100px 0; }
 .form-success { color: #10b981; font-size: .9rem; margin-top: .8rem; }
 .hidden { display: none !important; }
 
+/* ==================== CHATBOT ==================== */
+#chatbot { background: rgba(2,8,20,.85); }
+.chatbot-sub {
+  color: var(--text-muted); max-width: 600px;
+  margin-bottom: 2.5rem; font-size: 1.05rem;
+}
+.chatbot-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--card-shadow), 0 0 40px rgba(124,58,237,.12);
+  transition: border-color .3s, box-shadow .3s;
+  min-height: 720px;
+  display: flex;
+  flex-direction: column;
+}
+.chatbot-wrapper:hover {
+  border-color: rgba(124,58,237,.4);
+  box-shadow: var(--card-shadow), 0 0 60px rgba(124,58,237,.2);
+}
+.chatbot-wrapper iframe {
+  flex: 1;
+  min-height: 720px;
+  border: none;
+  display: block;
+}
+
 /* ==================== FOOTER ==================== */
 footer {
   text-align: center; padding: 2.5rem; background: rgba(2,8,16,.92);
